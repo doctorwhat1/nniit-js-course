@@ -1,0 +1,37 @@
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function onClick(event) {
+  document.body.style.color = 'darkgreen';
+});
+
+const btn2 = document.getElementById('btn2');
+
+btn2.addEventListener('click', function onClick(event) {
+  document.body.style.color = 'red';
+});
+
+const btn_calc = document.getElementById('btn_calc');
+
+btn_calc.addEventListener('click', function onClick(event) {
+	var mylist = document.getElementById("myList"); 
+	
+	var first_number = document.getElementById("first_number"); 
+	var second_number = document.getElementById("second_number"); 
+	var result = document.getElementById("result"); 
+	
+	
+	
+  //define what operation is current
+	if (mylist.options[mylist.selectedIndex].text=="+")
+		result.value = parseInt(first_number.value) + parseInt(second_number.value);
+	
+	if (mylist.options[mylist.selectedIndex].text=="-")
+		result.value = parseInt(first_number.value) - parseInt(second_number.value);
+		
+	if (mylist.options[mylist.selectedIndex].text=="*")
+		result.value = parseInt(first_number.value) * parseInt(second_number.value);
+  
+	if (mylist.options[mylist.selectedIndex].text=="/")
+		result.value = parseInt(first_number.value) / parseInt(second_number.value);
+  
+});
